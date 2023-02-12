@@ -9,10 +9,21 @@ import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * The `CacheConfig` class is a configuration class for caching in the application.
+ * It enables caching using the `@EnableCaching` annotation and defines two beans:
+ * `cacheManager` and `exchangeRatesCacheManager`.
+ */
 @Configuration
 @EnableCaching
 public class CacheConfig {
 
+  /**
+   * Defines a bean for a concurrent map cache manager.
+   * The cache manager is used to manage the caching of exchange rates data.
+   * 
+   * @return the cache manager
+   */
   @Bean
   public CacheManager cacheManager() {
     ConcurrentMapCacheManager mgr = new ConcurrentMapCacheManager();
@@ -22,8 +33,14 @@ public class CacheConfig {
     return mgr;
   }
   
+	/**
+	 * Defines a bean for the exchange rates cache manager.
+	 * 
+	 * @return the exchange rates cache manager
+	 */
 	@Bean
 	public ExchangeRatesCacheManager exchangeRatesCacheManager() {
 		return new ExchangeRatesCacheManager();
 	}
 }
+
