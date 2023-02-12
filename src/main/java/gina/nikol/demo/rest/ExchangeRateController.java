@@ -36,7 +36,7 @@ public class ExchangeRateController {
 	public ExchangeRates getRates(@RequestParam(value = "base", required = false) String base) {
 
 		String normalizedBase = base != null ? base : "EUR";
-		ExchangeRates exchangeRates = cacheManager.getExchangedRates(base);
+		ExchangeRates exchangeRates = cacheManager.getExchangedRates(normalizedBase);
 		if(exchangeRates != null) {
 			return service.parseRatesResponse(exchangeRates);
 		}
