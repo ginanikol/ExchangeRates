@@ -15,3 +15,11 @@ Web server Caching mechanism with spring-boot-starter-cache dependency
 
 ### Installation guide
 Import to your favourite IDE as a gradle project. Requires at least Java 17, gradle 7.6.
+
+### Documentation
+Once the application is up, documentation can be accessed from:
+
+1. [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+1. [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+
+Please update host name and port if needed.
